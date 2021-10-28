@@ -18,5 +18,5 @@ int main()
     double skobka3 = (4 * a * pow(b, 3)) + pow(b, 4);
     cout << "Делитель= " << skobka3 << endl;
     double x = (pow((a + b), 4) - (pow(a, 4) + 4 * pow(a, 3) * b + 6 * pow(a, 2) * pow(b, 2))) / (4 * a * pow(b, 3) + pow(b, 4));
-    cout << "Выражение для типа float= " << x;
+    cout << "Выражение для типа double= " << x;
 }
