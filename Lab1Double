@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+
+    setlocale(LC_ALL, "Russian");
+    double a = 100;
+    double b = 0.001;
+    double skobka1 = pow((a + b), 4);
+    cout<<"Первая скобка= " << skobka1 << endl;
+    double skobka2 = pow(a, 4) + 4 * pow(a, 3) * b + 6 * pow(a, 2) * pow(b, 2);
+    cout << "Вторая скобка= " << skobka2 << endl;
+    double raznost = skobka1 - skobka2;
+    cout << "Разность 1 и 2 скобок=  " << raznost << endl;
+    double skobka3 = (4 * a * pow(b, 3)) + pow(b, 4);
+    cout << "Делитель= " << skobka3 << endl;
+    double x = (pow((a + b), 4) - (pow(a, 4) + 4 * pow(a, 3) * b + 6 * pow(a, 2) * pow(b, 2))) / (4 * a * pow(b, 3) + pow(b, 4));
+    cout << "Выражение для типа float= " << x;
+}
