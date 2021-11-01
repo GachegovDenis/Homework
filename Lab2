@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+#include <cmath>
+int main()
+{
+	int n;
+	double sum, a, E,z;
+	E = 0.0001;
+	n = 0;
+	sum = 0;
+	cout << "Find sum (2 * n - 1) / (2 ^ n) with accuracy E=10^-4 "<<endl;
+	do {
+		a = (2*n - 1) / (pow(2,n));
+		sum += a;
+		cout<<"a=" << a<<" PRI n=" << n << endl;
+		n++;
+		} 
+	while (fabs(a) >= E);
+	cout << "Answer:sum=" << sum;
+	return 0;
+}
