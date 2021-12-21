@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+// функция вывода матрицы на экран
+void print(int** array, size_t n, size_t m) {
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < m; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << endl << endl;
+    }
+}
+// выделение памяти под матрицу
+int** matrix(size_t n, size_t m) {
+    int** array = new int* [n];
+    for (size_t i = 0; i < n; i++) {
+        array[i] = new int[m];
+    }
+    return array;
+}
+int main() {
+    size_t n = 3, m = 3;
+    int** source = matrix(n, m);
+    int** transposed = matrix(m, n);
+    // заполнение исходной матрицы
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < m; j++) {
+            source[i][j] = i * n + j; //
+        }
+    }
+    cout << "source matrix: " << endl << endl;
+    print(source, n, m);
+    cout << endl;
+    // транспонирование
+    for (size_t i = 0; i < n; i++)
+        for (size_t j = 0; j < m; j++)
+            transposed[j][i] = source[i][j];
+    cout << "transposed matrix: " << endl << endl;
+    print(transposed, m, n);
+    cout << endl<<"Simmetrichna li matrica?-";
+    //проверка симметричности
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            if (source[i][j] != transposed[i][j]) {
+                cout << "no";
+                return 0;
+            }
+          
+        }
+    }
+    cout << "yes";
+}
